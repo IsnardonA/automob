@@ -1,0 +1,51 @@
+version: '3.9'
+
+services:
+  spark-scala:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: spark-scala
+    volumes:
+      - ./app:/app
+    depends_on:
+      - postgres
+    networks:
+      - scala-network
+
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - scala-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - scala-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  scala-network:
+    driver: bridge
