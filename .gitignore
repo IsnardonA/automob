@@ -1,0 +1,40 @@
+# Ignorer les fichiers générés par Metals (LSP pour Scala)
+.metals/
+.metals.sbt
+
+# Ignorer les fichiers de compilation Scala (sbt, coursier, etc.)
+*.class
+*.log
+*.cache
+*.history
+*.lock
+*.tmp
+target/
+project/project/
+project/target/
+.idea/
+
+# Ignorer les fichiers générés par SBT
+dist/
+lib_managed/
+src_managed/
+app/target/
+.sbt/
+.sbtboot/
+.ivy2/
+.coursier/
+
+# Ignorer les fichiers de Build Server Protocol (BSP)
+.bsp/
+
+# Ignorer les fichiers de l'éditeur VS Code
+.vscode/
+
+# Ignorer les fichiers système et temporaires
+.DS_Store
+Thumbs.db
+
+app/data/
+brouillon/
+.scalafmt.conf
+.scala-build/
