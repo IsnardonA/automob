@@ -12,6 +12,7 @@
 target/
 project/project/
 project/target/
+target/
 .idea/
 
 # Ignorer les fichiers générés par SBT
