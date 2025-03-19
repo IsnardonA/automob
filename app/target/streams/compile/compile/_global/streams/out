@@ -1,5 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Projets\scala-spark-docker\app\src\main\scala\utils\download.scala:48:16: not enough arguments for constructor Array: (_length: Int)Array[T].[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter _length.[0m
-[0m[[0m[31merror[0m] [0m[0m  val buffer = new Array   // Taill 1024 octets (1 Ko).[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Projets\automob\automob\app\src\main\scala\utils\database.scala:150:7: not found: value calendarCastedDF[0m
+[0m[[0m[31merror[0m] [0m[0m      calendarCastedDF = calendarDF[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Projets\automob\automob\app\src\main\scala\utils\database.scala:154:5: not found: value calendarCastedDF[0m
+[0m[[0m[31merror[0m] [0m[0m    calendarCastedDF.write[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
