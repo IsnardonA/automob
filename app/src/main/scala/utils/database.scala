@@ -52,10 +52,6 @@ object database {
 
   def initGTFS(gtfsPath: String, connectionString: String): Unit = {
 
-    val sqlDirectory = "scripts/init/"
-
-    executeOrdoScripts(sqlDirectory, connectionString)
-
     // Créer la SparkSession
     val spark = SparkSession
       .builder()

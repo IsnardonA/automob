@@ -1,0 +1,1 @@
+addSbtPlugin("com.github.sbt" % "flyway-sbt" % "9.22.0")
