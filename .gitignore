@@ -35,6 +35,5 @@ app/data/
 brouillon/
 .scalafmt.conf
 .scala-build/
+app/project/project/
 app/project/target/
-app/target/
-
