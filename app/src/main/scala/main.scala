@@ -10,11 +10,19 @@ object main {
 
 
     // Download the file
-    download.downloadFile(config.GTFS_MTP_URL, config.GTFS_MTP_DEST + config.GTFS_MTP_FILENAME)
-    Unzip.unzipGTFS( config.GTFS_MTP_DEST + config.GTFS_MTP_FILENAME, config.GTFS_MTP_DEST)
+    download.downloadFile(config.GTFS_MTP_URL, config.GTFS_PATH + "MTP/" + config.GTFS_MTP_FILENAME)
+    Unzip.unzipGTFS( config.GTFS_PATH + "MTP/" + config.GTFS_MTP_FILENAME, config.GTFS_PATH + "MTP/")
     // println(s"Décompression terminée dans $outputPath")
     //database.executeOrdoScripts(sqlDirectory, connectionString)
+    val spark = SparkSession
+      .builder()
+      .appName("Init GTFS DB")
+      .master("local[*]") // Mode local
+      .getOrCreate()
 
+    val datas = new GTFS(spark, config.GTFS_PATH, "MTP")
+
+    datas.agency.show()
 
 
     //database.initGTFS(outputPath, connectionString)
