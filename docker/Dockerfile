@@ -35,5 +35,7 @@ COPY app/ /app/
 
 RUN cd /app && sbt sbtVersion
 
+#RUN sbt flywayMigrate
+
 # Définition du point d'entrée
 CMD ["sbt", "clean", "compile", "run"]

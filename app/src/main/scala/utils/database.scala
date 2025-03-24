@@ -8,9 +8,6 @@ import java.nio.file.{Files, Paths}
 
 object database {
 
-// Paramètres PostgreSQL
-  // val connectionString = "jdbc:postgresql://localhost:5432/automob?user=admin&password=password"
-
   def executeOrdoScripts(
       sqlDirectory: String,
       connectionString: String

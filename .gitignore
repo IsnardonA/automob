@@ -37,3 +37,6 @@ brouillon/
 .scala-build/
 app/project/project/
 app/project/target/
+.env
+*.env
+config/secrets.conf

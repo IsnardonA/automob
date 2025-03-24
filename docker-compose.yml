@@ -17,10 +17,12 @@ services:
     image: postgres:15
     container_name: postgres-db
     restart: always
+    env_file:
+      - .env
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydatabase
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DBNAME}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -32,9 +34,11 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin
     restart: always
+    env_file:
+      - .env
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_USER}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     ports:
       - "5050:80"
     depends_on:
